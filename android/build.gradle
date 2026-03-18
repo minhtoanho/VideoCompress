@@ -9,7 +9,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:8.1.1'
+        classpath 'com.android.tools.build:gradle:8.11.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
@@ -32,7 +32,7 @@ android {
         namespace 'com.example.video_compress'
     }
     
-    compileSdk 34
+    compileSdk 35
 
     compileOptions {
         sourceCompatibility 1.8
@@ -46,15 +46,16 @@ android {
         main.java.srcDirs += 'src/main/kotlin'
     }
     defaultConfig {
-        minSdkVersion 21
+        minSdk 21
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-    lintOptions {
+    lint {
         disable 'InvalidPackage'
     }
 }
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
-    implementation 'com.otaliastudios:transcoder:0.10.5'
+    implementation 'com.otaliastudios:transcoder:0.11.2'
+    compileOnly 'io.flutter:flutter_embedding_debug:1.0.0-ff37bef603d97e6e7c5e67f85ec15c6190e5d9f8'
 }
